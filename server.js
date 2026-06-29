@@ -9,8 +9,8 @@ app.use(express.json());
 // 1. Conexión a la base de datos original de productos (Ajustá el host si también la moviste a la Raspberry)
 const poolProductos = new Pool({
   user: "postgres",
-  host: "localhost",
-  database: "inventoryBD",
+  host: "192.168.2.101",
+  database: "inventoryCloud",
   password: "admin",
   port: 5432,
 });
@@ -48,5 +48,5 @@ app.get("/api/usuarios", async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+  console.log(`Servidor ejecutándose en http://192.168.2.101:${PORT}`);
 });
